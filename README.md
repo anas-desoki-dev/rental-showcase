@@ -33,4 +33,4 @@ ng test
 
 ## Live demo
 
-Coming soon.
+https://anas-desoki-dev.github.io/rental-showcase/
