@@ -1,0 +1,37 @@
+@if (vm$ | async; as vm) {
+  @if (vm.loading) {
+    <p class="status">{{ i18n.t("loading") }}</p>
+  } @else if (vm.error) {
+    <p class="status error">{{ i18n.t(vm.error) }}</p>
+  } @else {
+    <div class="filters">
+      @for (f of filters; track f) {
+        <button
+          type="button"
+          [class.active]="vm.selected === f"
+          (click)="select(f)"
+        >
+          {{ i18n.t(f) }}
+        </button>
+      }
+    </div>
+
+    @if (vm.data.length === 0) {
+      <p class="status">{{ i18n.t("noListings") }}</p>
+    } @else {
+      <div class="grid">
+        @for (item of vm.data; track item.id) {
+          <a class="card" [routerLink]="['/listing', item.id]">
+            <div class="emoji">{{ item.emoji }}</div>
+            <h3>{{ item.name[i18n.lang()] }}</h3>
+            <p>{{ item.description[i18n.lang()] }}</p>
+            <strong
+              >{{ i18n.t("currency") }} {{ item.pricePerDay | number }}
+              {{ i18n.t("perDay") }}</strong
+            >
+          </a>
+        }
+      </div>
+    }
+  }
+}

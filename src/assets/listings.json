@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "category": "car",
+    "emoji": "🏎️",
+    "name": { "en": "Sports Coupe", "ar": "سيارة رياضية كوبيه" },
+    "description": {
+      "en": "Two-seater sports car for city drives.",
+      "ar": "سيارة رياضية بمقعدين للتنقل داخل المدينة."
+    },
+    "pricePerDay": 1500
+  },
+  {
+    "id": 2,
+    "category": "yacht",
+    "emoji": "🛥️",
+    "name": { "en": "Marina Yacht", "ar": "يخت المارينا" },
+    "description": {
+      "en": "Half-day yacht cruise for up to 10 guests.",
+      "ar": "رحلة يخت لنصف يوم تتسع لـ١٠ أشخاص."
+    },
+    "pricePerDay": 4000
+  },
+  {
+    "id": 3,
+    "category": "helicopter",
+    "emoji": "🚁",
+    "name": { "en": "City Helicopter Tour", "ar": "جولة بالهليكوبتر" },
+    "description": {
+      "en": "A 30-minute aerial tour over the coast.",
+      "ar": "جولة جوية لمدة ٣٠ دقيقة فوق الساحل."
+    },
+    "pricePerDay": 3000
+  },
+  {
+    "id": 4,
+    "category": "buggy",
+    "emoji": "🏜️",
+    "name": { "en": "Desert Buggy", "ar": "دراجة الصحراء" },
+    "description": {
+      "en": "Guided desert buggy session.",
+      "ar": "جلسة قيادة موجّهة في الصحراء."
+    },
+    "pricePerDay": 800
+  },
+  {
+    "id": 5,
+    "category": "car",
+    "emoji": "🚙",
+    "name": { "en": "Family SUV", "ar": "سيارة دفع رباعي عائلية" },
+    "description": {
+      "en": "Spacious SUV for family trips.",
+      "ar": "سيارة واسعة للرحلات العائلية."
+    },
+    "pricePerDay": 600
+  }
+]

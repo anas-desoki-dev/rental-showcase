@@ -1,0 +1,21 @@
+<a class="back" routerLink="/">{{ i18n.t("back") }}</a>
+
+@if (vm$ | async; as vm) {
+  @if (vm.loading) {
+    <p class="status">{{ i18n.t("loading") }}</p>
+  } @else if (vm.error) {
+    <p class="status error">{{ i18n.t(vm.error) }}</p>
+  } @else if (vm.item) {
+    <article class="details">
+      <div class="emoji">{{ vm.item.emoji }}</div>
+      <h1>{{ vm.item.name[i18n.lang()] }}</h1>
+      <p>{{ vm.item.description[i18n.lang()] }}</p>
+      <strong
+        >{{ i18n.t("currency") }} {{ vm.item.pricePerDay | number }}
+        {{ i18n.t("perDay") }}</strong
+      >
+    </article>
+
+    <app-booking-form [listing]="vm.item" />
+  }
+}

@@ -1,0 +1,87 @@
+<section class="booking">
+  <h2>{{ i18n.t("bookTitle") }}</h2>
+
+  @if (success) {
+    <div class="success" role="status">
+      <p>{{ i18n.t("bookSuccess") }}</p>
+      <button type="button" (click)="reset()">
+        {{ i18n.t("bookAnother") }}
+      </button>
+    </div>
+  } @else {
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <label for="name">{{ i18n.t("fName") }}</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        autocomplete="name"
+        [attr.aria-invalid]="!!errorKey('name')"
+      />
+      @if (errorKey("name"); as e) {
+        <small class="err" role="alert">{{ i18n.t(e) }}</small>
+      }
+
+      <label for="email">{{ i18n.t("fEmail") }}</label>
+      <input
+        id="email"
+        type="email"
+        dir="ltr"
+        formControlName="email"
+        autocomplete="email"
+        [attr.aria-invalid]="!!errorKey('email')"
+      />
+      @if (errorKey("email"); as e) {
+        <small class="err" role="alert">{{ i18n.t(e) }}</small>
+      }
+
+      <label for="phone">{{ i18n.t("fPhone") }}</label>
+      <input
+        id="phone"
+        type="tel"
+        dir="ltr"
+        formControlName="phone"
+        autocomplete="tel"
+        [attr.aria-invalid]="!!errorKey('phone')"
+      />
+      @if (errorKey("phone"); as e) {
+        <small class="err" role="alert">{{ i18n.t(e) }}</small>
+      }
+
+      <label for="date">{{ i18n.t("fDate") }}</label>
+      <input
+        id="date"
+        type="date"
+        formControlName="date"
+        [min]="today"
+        [attr.aria-invalid]="!!errorKey('date')"
+      />
+      @if (errorKey("date"); as e) {
+        <small class="err" role="alert">{{ i18n.t(e) }}</small>
+      }
+
+      <label for="days">{{ i18n.t("fDays") }}</label>
+      <input
+        id="days"
+        type="number"
+        formControlName="days"
+        min="1"
+        max="30"
+        [attr.aria-invalid]="!!errorKey('days')"
+      />
+      @if (errorKey("days"); as e) {
+        <small class="err" role="alert">{{ i18n.t(e) }}</small>
+      }
+
+      <label for="notes">{{ i18n.t("fNotes") }}</label>
+      <textarea id="notes" rows="3" formControlName="notes"></textarea>
+
+      <p class="total">
+        {{ i18n.t("total") }}:
+        <strong>{{ i18n.t("currency") }} {{ total | number }}</strong>
+      </p>
+
+      <button type="submit" class="submit">{{ i18n.t("submitBtn") }}</button>
+    </form>
+  }
+</section>

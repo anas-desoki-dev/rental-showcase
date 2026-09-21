@@ -1,27 +1,36 @@
-# Angular17
+# Rental Showcase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+A small Angular 17 app that lists luxury rental experiences (cars, yachts, helicopters, desert buggies) with filtering, a details page, a booking form, and English/Arabic support with RTL layout.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Listings page with loading, empty and error states
+- Category filter built with RxJS (`BehaviorSubject` + `combineLatest`)
+- Details page with routing (`/listing/:id`) using `switchMap`
+- Booking form built with Reactive Forms: validation (required, email, phone pattern, custom no-past-date validator), live total, and accessible error messages
+- English / Arabic toggle with RTL layout, built with signals
+- Data fetched through `HttpClient` from a JSON file (easy to swap for a real API URL)
+- Unit tests with Jasmine and Karma
+- SSR-compatible: uses the `DOCUMENT` token instead of the global `document`
 
-## Code scaffolding
+## Tech
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 17 (standalone components, built-in control flow), TypeScript, RxJS, Reactive Forms, Jasmine/Karma.
 
-## Build
+## Run locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+ng serve
+ng test
+```
 
-## Running unit tests
+## Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Sample data only. It is not connected to any real service.
+- The booking form is a demo: it does not send data anywhere.
+- Built with AI assistance. I can walk through and modify any part of the code.
 
-## Running end-to-end tests
+## Live demo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Coming soon.
