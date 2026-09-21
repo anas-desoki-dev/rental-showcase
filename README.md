@@ -17,6 +17,14 @@ A small Angular 17 app that lists luxury rental experiences (cars, yachts, helic
 
 Angular 17 (standalone components, built-in control flow), TypeScript, RxJS, Reactive Forms, Jasmine/Karma.
 
+## Screenshots
+
+| English                                             | Arabic (RTL)                                       |
+| --------------------------------------------------- | -------------------------------------------------- |
+| ![Listings in English](screenshots/listings-en.png) | ![Listings in Arabic](screenshots/listings-ar.png) |
+
+![Booking form with validation](screenshots/booking-form.png)
+
 ## Run locally
 
 ```bash
