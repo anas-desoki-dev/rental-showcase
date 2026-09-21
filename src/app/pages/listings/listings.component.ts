@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import {
@@ -12,6 +12,7 @@ import {
 } from 'rxjs';
 import { ListingService } from '../../services/listing.service';
 import { LanguageService } from '../../services/language.service';
+import { SeoService } from '../../services/seo.service';
 import { Category, Listing } from '../../models/listing';
 
 type Filter = Category | 'all';
@@ -31,6 +32,7 @@ interface ViewState {
 })
 export class ListingsComponent {
   private service = inject(ListingService);
+  private seo = inject(SeoService);
   i18n = inject(LanguageService);
 
   filters: Filter[] = ['all', 'car', 'yacht', 'helicopter', 'buggy'];
@@ -56,6 +58,13 @@ export class ListingsComponent {
           : state.data.filter((l) => l.category === selected),
     })),
   );
+
+  constructor() {
+    // بيتنفذ تاني كل ما اللغة تتغير
+    effect(() => {
+      this.seo.set(this.i18n.t('seoListTitle'), this.i18n.t('seoListDesc'));
+    });
+  }
 
   select(filter: Filter) {
     this.selected$.next(filter);

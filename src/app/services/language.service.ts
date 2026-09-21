@@ -37,6 +37,9 @@ const DICT: Record<Lang, Record<string, string>> = {
     errPhone: 'Enter 8–15 digits, optionally starting with +.',
     errPast: 'Date cannot be in the past.',
     errDays: 'Days must be between 1 and 30.',
+    seoListTitle: 'Luxury Rentals: Cars, Yachts & More | Rental Showcase',
+    seoListDesc:
+      'Browse luxury rentals: sports cars, yachts, helicopter tours and desert buggies. Filter by category and request a booking in English or Arabic.',
   },
   ar: {
     title: 'معرض الإيجار',
@@ -70,6 +73,9 @@ const DICT: Record<Lang, Record<string, string>> = {
     errPhone: 'أدخل من ٨ إلى ١٥ رقماً، ويمكن أن يبدأ بـ +.',
     errPast: 'لا يمكن أن يكون التاريخ في الماضي.',
     errDays: 'يجب أن تكون الأيام بين ١ و٣٠.',
+    seoListTitle: 'تأجير فاخر: سيارات ويخوت وأكثر | معرض الإيجار',
+    seoListDesc:
+      'تصفّح تجارب التأجير الفاخرة: سيارات رياضية ويخوت وجولات بالهليكوبتر ودراجات صحراوية. صفّ حسب الفئة واطلب الحجز بالعربية أو الإنجليزية.',
   },
 };
 
